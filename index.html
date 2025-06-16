@@ -20,7 +20,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, top 0.3s ease;
     }
 
     nav {
@@ -158,8 +158,15 @@
     footer a:hover { color: #fff; }
 
     @media(max-width:600px) {
+      header {
+        height: 50px;
+        transition: top 0.3s ease;
+      }
       nav {
-        padding: 10px 15px;
+        padding: 5px 15px;
+      }
+      nav span.logo {
+        font-size: 1.5rem;
       }
       nav ul {
         flex-direction: column;
@@ -200,6 +207,12 @@
         font-size: 1rem;
         padding: 10px 5px;
       }
+    }
+
+    /* Clase para ocultar header */
+    header.hide {
+      top: -70px;
+      box-shadow: none;
     }
 
     .marca-agua {
@@ -294,12 +307,28 @@
 
   <script>
     const hero = document.querySelector('.hero');
+    const header = document.querySelector('header');
+    let lastScrollY = window.scrollY;
+
     window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
+      const currentScrollY = window.scrollY;
+
+      // Controlar opacidad del hero como antes
       const heroHeight = hero.offsetHeight;
-      let opacity = 1 - scrollY / heroHeight;
+      let opacity = 1 - currentScrollY / heroHeight;
       opacity = Math.max(0, Math.min(1, opacity));
       hero.style.opacity = opacity;
+
+      // Mostrar/ocultar header según scroll
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down
+        header.classList.add('hide');
+      } else {
+        // Scrolling up
+        header.classList.remove('hide');
+      }
+
+      lastScrollY = currentScrollY;
     });
   </script>
 

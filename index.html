@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tienda de Videojuegos - YisusGG</title>
-
   <style>
-    * { box-sizing: border-box; transition: all .3s ease; }
+    * {
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f4f6f8;
       color: #333;
     }
-    a { text-decoration: none; color: inherit; }
-
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
     header {
       background: #2c3e50;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
@@ -22,7 +27,6 @@
       z-index: 1000;
       transition: background 0.3s ease, top 0.3s ease;
     }
-
     nav {
       max-width: 1200px;
       margin: 0 auto;
@@ -31,16 +35,14 @@
       justify-content: space-between;
       align-items: center;
     }
-
     nav span.logo {
       font-size: 2rem;
       font-weight: 900;
-      color: #FFFFFF;
+      color: #fff;
       font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       letter-spacing: 2px;
       text-shadow: 0 0 8px rgba(0, 209, 255, 0.7);
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -48,7 +50,6 @@
       margin: 0;
       padding: 0;
     }
-
     nav li a {
       color: #cfd8dc;
       font-weight: 700;
@@ -57,38 +58,40 @@
       font-size: 1rem;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-
     nav li a:hover {
       background-color: #00d1ff;
       color: #0f2027;
       box-shadow: 0 0 10px #00d1ff;
     }
 
+   
     .hero {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      width: 100vw;
+      height: 600px; 
       overflow: hidden;
-      background: #000;
-      margin-bottom: 40px;
-      transition: opacity 0.3s ease;
+      position: relative;
+      margin: 0; 
+      border-radius: 0;
+      box-shadow: none;
     }
     .slider-track {
-      display: flex; width: 100%; height: 100%;
+      display: flex;
+      width: 100%; 
+      height: 100%;
       animation: slide 10s infinite ease-in-out;
     }
     .hero img {
       flex: 0 0 100%;
-      width: 100%; height: 100%;
+      width: 100vw;
+      height: 100%;
       object-fit: cover;
-      background: #000;
-      transition: transform .3s ease;
+      user-select: none;
+      -webkit-user-drag: none;
     }
-    .hero img:hover { transform: scale(1.02); }
     @keyframes slide {
-      0%,5% { transform: translateX(0); }
-      33%,38% { transform: translateX(-100%); }
-      66%,71% { transform: translateX(-200%); }
+      0%, 5% { transform: translateX(0); }
+      33%, 38% { transform: translateX(-100vw); }
+      66%, 71% { transform: translateX(-200vw); }
       100% { transform: translateX(0); }
     }
 
@@ -158,9 +161,11 @@
     footer a:hover { color: #fff; }
 
     @media(max-width:600px) {
-      header {
-        height: 50px;
-        transition: top 0.3s ease;
+      .hero {
+        height: 250px;
+      }
+      .slider-track {
+        animation: slide 12s infinite ease-in-out;
       }
       nav {
         padding: 5px 15px;
@@ -179,16 +184,6 @@
       nav li a {
         display: block;
         width: 100%;
-      }
-      .hero {
-        height: 250px;
-      }
-      .slider-track {
-        width: 300%;
-      }
-      .hero img {
-        height: auto;
-        max-height: 250px;
       }
       .explorar h2 {
         font-size: 1.8rem;
@@ -209,25 +204,14 @@
       }
     }
 
-    /* Clase para ocultar header */
+
     header.hide {
       top: -70px;
       box-shadow: none;
     }
-
-    .marca-agua {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      width: 120px;
-      opacity: 0.25;
-      pointer-events: none;
-      z-index: 9999;
-    }
   </style>
 </head>
 <body>
-
   <header>
     <nav>
       <span class="logo">YisusGG</span>
@@ -242,9 +226,9 @@
 
   <section class="hero">
     <div class="slider-track">
-      <img src="Grandes/Zelda.jpg" alt="Juego popular 2">
-      <img src="Grandes/Mario.jpg" alt="Juego popular 3">
-      <img src="Grandes/GOW.jpg" alt="Juego popular 1">
+      <img src="Grandes/Zelda.jpg" alt="Juego popular 2" />
+      <img src="Grandes/Mario.jpg" alt="Juego popular 3" />
+      <img src="Grandes/GOW.jpg" alt="Juego popular 1" />
     </div>
   </section>
 
@@ -256,19 +240,19 @@
       <div class="juegos">
         <a href="Assasins/Assasins.html">
           <div class="juego">
-            <img src="Nuevos/Assasins.avif" alt="Assassins Creed Shadows">
+            <img src="Nuevos/Assasins.avif" alt="Assassins Creed Shadows" />
             <h4>Assassin's Creed Shadows</h4>
           </div>
         </a>
         <a href="Minecraft/Minecraft.html">
           <div class="juego">
-            <img src="Nuevos/Minecraft.avif" alt="Minecraft">
+            <img src="Nuevos/Minecraft.avif" alt="Minecraft" />
             <h4>Minecraft</h4>
           </div>
         </a>
         <a href="Fifa22/Fifa22.html">
           <div class="juego">
-            <img src="Nuevos/Fifa.avif" alt="FIFA 22">
+            <img src="Nuevos/Fifa.avif" alt="FIFA 22" />
             <h4>FIFA 22</h4>
           </div>
         </a>
@@ -278,18 +262,48 @@
     <div class="categoria">
       <h3>Mejores éxitos</h3>
       <div class="juegos">
-        <a href="SpiderMan-Remastered.html"><div class="juego"><img src="Exitos/Spiderman.jpeg" alt="Spider‑Man"><h4>Spider‑Man Remastered</h4></div></a>
-        <a href="Modern-Warfare.html"><div class="juego"><img src="Exitos/Call OF Duty.jpg" alt="Modern Warfare"><h4>Modern Warfare</h4></div></a>
-        <a href="GTA5.html"><div class="juego"><img src="Exitos/GTA5.jpg" alt="GTA 5"><h4>GTA 5</h4></div></a>
+        <a href="SpiderMan-Remastered.html">
+          <div class="juego">
+            <img src="Exitos/Spiderman.jpeg" alt="Spider‑Man" />
+            <h4>Spider‑Man Remastered</h4>
+          </div>
+        </a>
+        <a href="Modern-Warfare.html">
+          <div class="juego">
+            <img src="Exitos/Call OF Duty.jpg" alt="Modern Warfare" />
+            <h4>Modern Warfare</h4>
+          </div>
+        </a>
+        <a href="GTA5.html">
+          <div class="juego">
+            <img src="Exitos/GTA5.jpg" alt="GTA 5" />
+            <h4>GTA 5</h4>
+          </div>
+        </a>
       </div>
     </div>
 
     <div class="categoria">
       <h3>Más vendidos</h3>
       <div class="juegos">
-        <a href="RedDeadRedemption2.html"><div class="juego"><img src="Vendidos/Red Dead 2.jpg" alt="RDR2"><h4>Red Dead Redemption 2</h4></div></a>
-        <a href="TheWitcher.html"><div class="juego"><img src="Vendidos/the witcher.avif" alt="The Witcher"><h4>The Witcher</h4></div></a>
-        <a href="TombRider.html"><div class="juego"><img src="Vendidos/Tomb Raider.jpg" alt="Shadow of the Tomb Raider"><h4>Shadow of the Tomb Raider</h4></div></a>
+        <a href="RedDeadRedemption2.html">
+          <div class="juego">
+            <img src="Vendidos/Red Dead 2.jpg" alt="RDR2" />
+            <h4>Red Dead Redemption 2</h4>
+          </div>
+        </a>
+        <a href="TheWitcher.html">
+          <div class="juego">
+            <img src="Vendidos/the witcher.avif" alt="The Witcher" />
+            <h4>The Witcher</h4>
+          </div>
+        </a>
+        <a href="TombRider.html">
+          <div class="juego">
+            <img src="Vendidos/Tomb Raider.jpg" alt="Shadow of the Tomb Raider" />
+            <h4>Shadow of the Tomb Raider</h4>
+          </div>
+        </a>
       </div>
     </div>
   </section>
@@ -303,8 +317,6 @@
     </p>
   </footer>
 
-  <img class="marca-agua" src="Marca de agua.webp" alt="Marca de agua" />
-
   <script>
     const hero = document.querySelector('.hero');
     const header = document.querySelector('header');
@@ -313,24 +325,23 @@
     window.addEventListener('scroll', () => {
       const currentScrollY = window.scrollY;
 
-      // Controlar opacidad del hero como antes
+     
       const heroHeight = hero.offsetHeight;
       let opacity = 1 - currentScrollY / heroHeight;
       opacity = Math.max(0, Math.min(1, opacity));
       hero.style.opacity = opacity;
 
-      // Mostrar/ocultar header según scroll
+    
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        // Scrolling down
+      
         header.classList.add('hide');
       } else {
-        // Scrolling up
+      
         header.classList.remove('hide');
       }
 
       lastScrollY = currentScrollY;
     });
   </script>
-
 </body>
 </html>

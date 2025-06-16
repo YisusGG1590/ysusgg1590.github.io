@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Witcher 3: Wild Hunt – Ficha completa</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+    body{background:#121212;color:#f0f0f0;display:flex;min-height:100vh;}
+    a{color:#d87a0f;text-decoration:none}
+    .main-img{flex:1 1 50%;min-width:320px;max-height:100vh;overflow:hidden;position:relative;}
+    .main-img img{width:100%;height:100vh;object-fit:cover;}
+    .info{flex:1 1 50%;padding:40px 32px;overflow-y:auto;background:#181818;}
+    h1{font-size:2.3rem;color:#d87a0f;margin-bottom:8px;}
+    h2{font-size:1.4rem;margin:24px 0 12px;}
+    .tag{background:#d87a0f;color:#000;padding:2px 8px;border-radius:4px;margin-right:8px;font-size:.8rem;font-weight:bold;}
+    ul{list-style:none;margin-left:12px}
+    ul li{margin:3px 0}
+    .tab-bar{display:flex;gap:8px;margin:24px 0;}
+    .tab-bar button{padding:8px 18px;border:0;border-radius:20px;background:#333;color:#fff;cursor:pointer;transition:background .2s}
+    .tab-bar button.active{background:#d87a0f;color:#000;font-weight:bold;}
+    .tab-content{display:none;}
+    .tab-content.active{display:block;animation:fade .4s;}
+    @keyframes fade{from{opacity:0}to{opacity:1}}
+    .accordion{margin:12px 0;border-top:1px solid #333}
+    .accordion input{display:none}
+    .accordion label{display:block;padding:10px 0;cursor:pointer;font-weight:bold;}
+    .accordion div{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+    .accordion input:checked~div{max-height:400px;}
+    .carousel{position:relative;margin-top:12px}
+    .carousel img{width:100%;border-radius:8px;}
+    .carousel .thumbs{display:flex;gap:6px;margin-top:8px;overflow-x:auto;}
+    .carousel .thumbs img{width:80px;height:50px;object-fit:cover;cursor:pointer;opacity:.6;border-radius:4px;}
+    .carousel .thumbs img.active{opacity:1;outline:2px solid #d87a0f}
+    .btn{display:inline-block;margin:18px 8px 0 0;padding:12px 26px;border-radius:40px;background:#d87a0f;color:#000;font-weight:bold;transition:transform .2s}
+    .btn:hover{transform:translateY(-3px)}
+    .btn.alt{background:#b0630b}
+    .info::-webkit-scrollbar{width:8px}
+    .info::-webkit-scrollbar-thumb{background:#d87a0f;border-radius:4px}
+  </style>
+</head>
+<body>
+
+<section class="main-img">
+  <img src="Nuevos/witcher3.jpg" alt="Portada The Witcher 3: Wild Hunt">
+</section>
+
+<section class="info">
+  <h1>The Witcher 3: Wild Hunt</h1>
+  <span class="tag">RPG</span>
+  <span class="tag">Aventura</span>
+  <span class="tag">Mundo abierto</span>
+
+  <p style="margin:14px 0 6px;">Un juego de rol épico con una historia profunda, un mundo abierto gigantesco y una experiencia narrativa única protagonizada por Geralt de Rivia.</p>
+
+  <div class="tab-bar">
+    <button class="active" data-tab="ficha">Ficha</button>
+    <button data-tab="requisitos">Requisitos</button>
+    <button data-tab="galeria">Galería</button>
+    <button data-tab="trailer">Tráiler</button>
+  </div>
+
+  <div id="ficha" class="tab-content active">
+    <h2>Datos generales</h2>
+    <ul>
+      <li><strong>Desarrollador:</strong> CD Projekt Red</li>
+      <li><strong>Publisher:</strong> CD Projekt</li>
+      <li><strong>Motor:</strong> REDengine 3</li>
+      <li><strong>Plataformas:</strong> PC, PS4, Xbox One, Nintendo Switch</li>
+      <li><strong>Lanzamiento:</strong> 19 mayo 2015</li>
+      <li><strong>Modos:</strong> Historia, Mundo abierto, Misiones secundarias</li>
+      <li><strong>Duración campaña:</strong> 50-100 horas</li>
+    </ul>
+
+    <h2>Ediciones disponibles</h2>
+    <div class="accordion">
+      <input type="checkbox" id="standard-witcher">
+      <label for="standard-witcher">🎮 Edición Estándar</label>
+      <div>
+        <p>Juego base con historia completa y acceso a todas las misiones principales y secundarias.</p>
+      </div>
+
+      <input type="checkbox" id="game-of-the-year">
+      <label for="game-of-the-year">🏆 Edición Game of the Year</label>
+      <div>
+        <p>Incluye el juego base, los DLCs Hearts of Stone y Blood and Wine, y contenido adicional.</p>
+      </div>
+    </div>
+
+    <a href="#" class="btn">Comprar ahora</a>
+    <a href="#" class="btn alt">Más juegos CD Projekt</a>
+  </div>
+
+  <div id="requisitos" class="tab-content">
+    <h2>Requisitos de sistema (PC)</h2>
+    <h3 style="margin:8px 0 4px;">Mínimos</h3>
+    <ul>
+      <li>CPU: Intel Core i5-2500K 3.3 GHz / AMD Phenom II X4 940</li>
+      <li>GPU: Nvidia GeForce GTX 660 / AMD Radeon HD 7870</li>
+      <li>RAM: 6 GB</li>
+      <li>Almacenamiento: 35 GB</li>
+      <li>SO: Windows 7/8/10 64-bit</li>
+    </ul>
+
+    <h3 style="margin:16px 0 4px;">Recomendados</h3>
+    <ul>
+      <li>CPU: Intel Core i7 3770 3.4 GHz / AMD FX-8350 4 GHz</li>
+      <li>GPU: Nvidia GeForce GTX 770 / AMD Radeon R9 290</li>
+      <li>RAM: 8 GB</li>
+      <li>Almacenamiento: SSD con 35 GB libres</li>
+      <li>SO: Windows 10 64-bit</li>
+    </ul>
+  </div>
+
+  <div id="galeria" class="tab-content">
+    <h2>Capturas de pantalla</h2>
+    <div class="carousel">
+      <img id="bigshot" src="Galeria/witcher3_1.jpg" alt="Captura The Witcher 3">
+      <div class="thumbs">
+        <img class="active" src="Galeria/witcher3_1.jpg" alt="" data-full="Galeria/witcher3_1.jpg">
+        <img src="Galeria/witcher3_2.jpg" alt="" data-full="Galeria/witcher3_2.jpg">
+        <img src="Galeria/witcher3_3.jpg" alt="" data-full="Galeria/witcher3_3.jpg">
+        <img src="Galeria/witcher3_4.jpg" alt="" data-full="Galeria/witcher3_4.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="trailer" class="tab-content">
+    <h2>Tráiler oficial</h2>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
+      <iframe src="https://www.youtube.com/embed/c0i88t0Kacs"
+              style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+              allowfullscreen
+              title="Tráiler The Witcher 3: Wild Hunt"></iframe>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabButtons = document.querySelectorAll('.tab-bar button');
+  const tabContents = document.querySelectorAll('.tab-content');
+  tabButtons.forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      tabButtons.forEach(b=>b.classList.remove('active'));
+      tabContents.forEach(c=>c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  const bigshot = document.getElementById('bigshot');
+  const thumbs = document.querySelectorAll('.thumbs img');
+  thumbs.forEach(t=>{
+    t.addEventListener('click',()=>{
+      thumbs.forEach(i=>i.classList.remove('active'));
+      t.classList.add('active');
+      bigshot.src = t.dataset.full;
+    });
+  });
+</script>
+
+</body>
+</html>

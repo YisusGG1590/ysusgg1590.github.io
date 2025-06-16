@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda de Videojuegos - GameStore</title>
+
+  <style>
+    * { box-sizing: border-box; transition: all .3s ease; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: #2c3e50;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: background 0.3s ease;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav span.logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      font-family: 'Segoe UI Black', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px rgba(0, 209, 255, 0.7);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li a {
+      color: #cfd8dc;
+      font-weight: 700;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav li a:hover {
+      background-color: #00d1ff;
+      color: #0f2027;
+      box-shadow: 0 0 10px #00d1ff;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+      margin-bottom: 40px;
+      transition: opacity 0.3s ease;
+    }
+    .slider-track {
+      display: flex; width: 100%; height: 100%;
+      animation: slide 10s infinite ease-in-out;
+    }
+    .hero img {
+      flex: 0 0 100%;
+      width:100%; height:100%;
+      object-fit: cover;
+      background: #000;
+      transition: transform .3s ease;
+    }
+    .hero img:hover { transform: scale(1.02); }
+    @keyframes slide {
+      0%,5% { transform: translateX(0); }
+      33%,38% { transform: translateX(-100%); }
+      66%,71% { transform: translateX(-200%); }
+      100% { transform: translateX(0); }
+    }
+
+    .explorar {
+      max-width: 1200px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+    }
+    .explorar h2 {
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 40px 0;
+      color: #2c3e50;
+    }
+    .categoria {
+      margin-bottom: 50px;
+    }
+    .categoria h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      padding-left: 15px;
+      border-left: 4px solid #2c3e50;
+      color: #34495e;
+    }
+    .juegos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+    .juego {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 8px rgba(0,0,0,.05);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .juego:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,.1);
+    }
+    .juego img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .juego h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      padding: 15px 10px;
+      margin: 0;
+      color: #2c3e50;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: #ecf0f1;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: .9rem;
+    }
+    footer a {
+      color: #bdc3c7;
+      margin: 0 10px;
+    }
+    footer a:hover { color: #fff; }
+
+    @media(max-width:600px) {
+      nav ul { gap: 10px; font-size: .8rem; }
+      .explorar h2 { font-size: 1.8rem; }
+      .categoria h3 { font-size: 1.2rem; }
+    }
+
+    .marca-agua {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 120px;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <span class="logo">YisusGG</span>
+      <ul>
+        <li><a href="pase-ofertas.html">Pase &amp; Ofertas</a></li>
+        <li><a href="clasificacion.html">Clasificación de Juegos</a></li>
+        <li><a href="soporte.html">Soporte Técnico</a></li>
+        <li><a href="login.html">Inicio de Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="slider-track">
+      <img src="Grandes/Zelda.jpg" alt="Juego popular 2">
+      <img src="Grandes/Mario.jpg" alt="Juego popular 3">
+      <img src="Grandes/GOW.jpg" alt="Juego popular 1">
+    </div>
+  </section>
+
+  <section class="explorar">
+    <h2>Explorar juegos</h2>
+
+    <div class="categoria">
+      <h3>Juegos más nuevos</h3>
+      <div class="juegos">
+        <a href="Assasin´s/Assasin´s.html">
+          <div class="juego">
+            <img src="Nuevos/Assasin´s.avif" alt="Assassin's Creed Shadows">
+            <h4>Assassin's Creed Shadows</h4>
+          </div>
+        </a>
+        <a href="Minecraft/Minecraft.html">
+          <div class="juego">
+            <img src="Nuevos/Minecraft.avif" alt="Minecraft">
+            <h4>Minecraft</h4>
+          </div>
+        </a>
+        <a href="Fifa22/Fifa22.html">
+          <div class="juego">
+            <img src="Nuevos/Fifa.avif" alt="FIFA 22">
+            <h4>FIFA 22</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Mejores éxitos</h3>
+      <div class="juegos">
+        <a href="SpiderMan-Remastered.html"><div class="juego"><img src="Exitos/Spiderman.jpeg" alt="Spider‑Man"><h4>Spider‑Man Remastered</h4></div></a>
+        <a href="Modern-Warfare.html"><div class="juego"><img src="Exitos/Call OF Duty.jpg" alt="Modern Warfare"><h4>Modern Warfare</h4></div></a>
+        <a href="GTA5.html"><div class="juego"><img src="Exitos/GTA5.jpg" alt="GTA 5"><h4>GTA 5</h4></div></a>
+      </div>
+    </div>
+
+    <div class="categoria">
+      <h3>Más vendidos</h3>
+      <div class="juegos">
+        <a href="RedDeadRedemption2.html"><div class="juego"><img src="Vendidos/Red Dead 2.jpg" alt="RDR2"><h4>Red Dead Redemption 2</h4></div></a>
+        <a href="TheWitcher.html"><div class="juego"><img src="Vendidos/the witcher.avif" alt="The Witcher"><h4>The Witcher</h4></div></a>
+        <a href="TombRider.html"><div class="juego"><img src="Vendidos/Tomb Raider.jpg" alt="Shadow of the Tomb Raider"><h4>Shadow of the Tomb Raider</h4></div></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 YisusGG. Todos los derechos reservados.</p>
+    <p>
+      <a href="politica-privacidad.html">Política de privacidad</a> |
+      <a href="terminos-condiciones.html">Términos y condiciones</a> |
+      <a href="politica-reembolsos.html">Política de reembolsos</a>
+    </p>
+  </footer>
+
+  <img class="marca-agua" src="Marca de agua.webp" alt="Marca de agua" />
+
+  <script>
+    const hero = document.querySelector('.hero');
+    const sliderTrack = document.querySelector('.slider-track');
+
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const heroHeight = hero.offsetHeight;
+      let opacity = 1 - scrollY / heroHeight;
+      opacity = Math.max(0, Math.min(1, opacity));
+      hero.style.opacity = opacity;
+    });
+  </script>
+
+</body>
+</html>

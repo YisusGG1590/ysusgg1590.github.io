@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Assassin's Creed Shadows – Ficha completa</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #f0f0f0;
+      display: flex;
+      min-height: 100vh;
+      /* Por defecto es fila */
+      flex-direction: row;
+    }
+
+    a {
+      color: #00e0ff;
+      text-decoration: none;
+    }
+
+    .main-img {
+      flex: 1 1 50%;
+      min-width: 320px;
+      max-height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .main-img img {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .info {
+      flex: 1 1 50%;
+      padding: 40px 32px;
+      overflow-y: auto;
+      background: #181818;
+    }
+
+    /* ——— NUEVO ESTILO PARA TÍTULO PRINCIPAL ——— */
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 3rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(to right, #ff0000, #800000);
+      border-radius: 2px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin: 24px 0 12px;
+    }
+
+    .tag {
+      background: #00e0ff;
+      color: #000;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-right: 8px;
+      font-size: .8rem;
+      font-weight: bold;
+    }
+
+    ul { list-style: none; margin-left: 12px; }
+    ul li { margin: 3px 0; }
+
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      margin: 24px 0;
+      flex-wrap: wrap;
+    }
+
+    .tab-bar button {
+      padding: 8px 18px;
+      border: 0;
+      border-radius: 20px;
+      background: #333;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s;
+      white-space: nowrap;
+      flex: 1 1 auto;
+      text-align: center;
+      min-width: 100px;
+    }
+
+    .tab-bar button.active {
+      background: #00e0ff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; animation: fade .4s; }
+
+    @keyframes fade { from {opacity:0;} to {opacity:1;} }
+
+    .accordion { margin: 12px 0; border-top: 1px solid #333; }
+    .accordion input { display: none; }
+    .accordion label {
+      display: block; padding: 10px 0; cursor: pointer; font-weight: bold;
+    }
+    .accordion div {
+      max-height: 0; overflow: hidden; transition: max-height .3s ease;
+    }
+    .accordion input:checked ~ div { max-height: 400px; }
+
+    .carousel { position: relative; margin-top: 12px; }
+    .carousel img {
+      width: 100%; border-radius: 8px; max-height: 400px; object-fit: cover;
+    }
+    .carousel .thumbs {
+      display: flex; gap: 6px; margin-top: 8px; overflow-x: auto;
+    }
+    .carousel .thumbs img {
+      width: 80px; height: 50px; object-fit: cover; cursor: pointer;
+      opacity: .6; border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .carousel .thumbs img.active {
+      opacity: 1; outline: 2px solid #00e0ff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 18px 8px 0 0;
+      padding: 12px 26px;
+      border-radius: 40px;
+      background: #00e0ff;
+      color: #000;
+      font-weight: bold;
+      transition: transform .2s;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+    .btn.alt { background: #ffb400; }
+
+    .info::-webkit-scrollbar { width: 8px; }
+    .info::-webkit-scrollbar-thumb { background: #00e0ff; border-radius: 4px; }
+
+    /* MEDIA QUERY PARA MÓVILES */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .main-img {
+        flex: none;
+        height: 250px;
+        max-height: none;
+        min-width: 100%;
+      }
+
+      .main-img img {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .info {
+        flex: none;
+        padding: 20px 16px;
+        max-height: none;
+        overflow-y: visible;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+        margin: 20px 0 10px;
+      }
+
+      .tab-bar {
+        gap: 6px;
+      }
+
+      .tab-bar button {
+        font-size: 0.9rem;
+        min-width: 70px;
+        padding: 8px 12px;
+      }
+
+      .carousel .thumbs img {
+        width: 60px;
+        height: 40px;
+      }
+
+      .btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- PORTADA -->
+  <section class="main-img">
+    <img src="Portada.webp" alt="Portada Assassin's Creed Shadows">
+  </section>
+
+  <!-- INFORMACIÓN -->
+  <section class="info">
+
+    <h1>Assassin's Creed Shadows</h1>
+
+    <span class="tag">Acción‑Aventura</span>
+    <span class="tag">Single‑player</span>
+
+    <p style="margin:14px 0 6px;">
+      Sumérgete en el Japón del siglo XVI con dos protagonistas: la kunoichi <strong>Naoe</strong> y el samurái <strong>Yasuke</strong>.
+      Decide si prefieres el sigilo impecable o el combate letal mientras vives el eterno conflicto entre Asesinos y Templarios.
+    </p>
+
+    <div class="tab-bar">
+      <button class="active" data-tab="ficha">Ficha</button>
+      <button data-tab="requisitos">Requisitos</button>
+      <button data-tab="galeria">Galería</button>
+      <button data-tab="trailer">Tráiler</button>
+    </div>
+
+    <div id="ficha" class="tab-content active">
+      <h2>Datos generales</h2>
+      <ul>
+        <li><strong>Desarrollador:</strong> Ubisoft Quebec</li>
+        <li><strong>Publisher:</strong> Ubisoft</li>
+        <li><strong>Motor:</strong> Anvil Next 2.0</li>
+        <li><strong>Plataformas:</strong> PS5, Xbox Series X|S, PC, macOS, iPadOS</li>
+        <li><strong>Lanzamiento:</strong> 20 marzo 2025</li>
+        <li><strong>Modo foto:</strong> Sí</li>
+        <li><strong>Duración campaña:</strong> ~45 h (historia) / 100 h +</li>
+        <li><strong>Metacritic:</strong> 89/100</li>
+      </ul>
+
+      <h2>Ediciones disponibles</h2>
+      <div class="accordion">
+        <input type="checkbox" id="std">
+        <label for="std">🗡️ Standard Edition</label>
+        <div><p>Juego base + misión extra “Shadow of Kyoto”.</p></div>
+
+        <input type="checkbox" id="deluxe">
+        <label for="deluxe">💰 Deluxe Edition</label>
+        <div><p>Incluye juego base, Pase de Temporada (2 DLC) y pack cosmético “Ronin”.</p></div>
+
+        <input type="checkbox" id="collect">
+        <label for="collect">🎁 Collector’s Edition</label>
+        <div><p>Todo lo anterior + figura Yasuke 35 cm, steelbook, mapa de Kioto y litografía firmada.</p></div>
+      </div>
+
+      <a href="#" class="btn">Comprar ahora</a>
+      <a href="#" class="btn alt">Añadir a Deseos</a>
+    </div>
+
+    <div id="requisitos" class="tab-content">
+      <h2>Requisitos de sistema (PC)</h2>
+
+      <h3 style="margin:8px 0 4px;">Mínimos</h3>
+      <ul>
+        <li>CPU: Intel i5‑9600K / Ryzen 5 2600</li>
+        <li>GPU: GTX 1060 6 GB / RX 580 8 GB</li>
+        <li>RAM: 16 GB</li>
+        <li>Almacenamiento: 80 GB SSD</li>
+        <li>SO: Windows 10 64‑bit</li>
+      </ul>
+
+      <h3 style="margin:16px 0 4px;">Recomendados</h3>
+      <ul>
+        <li>CPU: Intel i7‑12700 / Ryzen 7 5800X</li>
+        <li>GPU: RTX 3070 / RX 6800</li>
+        <li>RAM: 32 GB</li>
+        <li>Almacenamiento: 80 GB SSD NVMe</li>
+        <li>SO: Windows 11 64‑bit</li>
+      </ul>
+    </div>
+
+    <div id="galeria" class="tab-content">
+      <h2>Capturas de pantalla</h2>
+      <div class="carousel">
+        <img id="bigshot" src="Galeria/imagen1.jpg" alt="Captura del juego">
+        <div class="thumbs">
+          <img class="active" src="Galeria/imagen1.jpg" alt="Imagen 1" data-full="Galeria/imagen1.jpg">
+          <img src="Galeria/imagen2.jpg" alt="Imagen 2" data-full="Galeria/imagen2.jpg">
+          <img src="Galeria/imagen3.jpg" alt="Imagen 3" data-full="Galeria/imagen3.jpg">
+          <img src="Galeria/imagen4.jpg" alt="Imagen 4" data-full="Galeria/imagen4.jpg">
+        </div>
+      </div>
+    </div>
+
+    <div id="trailer" class="tab-content">
+      <h2>Tráiler oficial</h2>
+      <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px;">
+        <iframe
+          src="https://www.youtube.com/embed/vovkzbtYBC8"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+          allowfullscreen
+          title="Tráiler Assassin's Creed Shadows"></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    const tabButtons  = document.querySelectorAll('.tab-bar button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    const bigshot = document.getElementById('bigshot');
+    const thumbs  = document.querySelectorAll('.thumbs img');
+
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        thumbs.forEach(i => i.classList.remove('active'));
+        t.classList.add('active');
+        bigshot.src = t.dataset.full;
+      });
+    });
+  </script>
+
+</body>
+</html>

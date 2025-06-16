@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minecraft – Ficha completa</title>
+
+  <style>
+    /* ——— RESET & BASE ——— */
+    * { margin:0; padding:0; box-sizing:border-box; font-family:Arial,Helvetica,sans-serif; }
+    body{ background:#121212; color:#f0f0f0; display:flex; min-height:100vh; }
+    a  { color:#00e0ff; text-decoration:none; }
+
+    /* ——— LAYOUT ——— */
+    .main-img{ flex:1 1 50%; min-width:320px; max-height:100vh; overflow:hidden; }
+    .main-img img{ width:100%; height:100vh; object-fit:cover; }
+
+    .info{ flex:1 1 50%; padding:40px 32px; overflow-y:auto; background:#181818; }
+    h1{ font-size:2.3rem; color:#00e0ff; margin-bottom:8px; }
+    h2{ font-size:1.4rem; margin:24px 0 12px; }
+
+    .tag{ background:#00e0ff; color:#000; padding:2px 8px; border-radius:4px; margin-right:8px;
+          font-size:.8rem; font-weight:bold; }
+
+    ul{ list-style:none; margin-left:12px; }
+    ul li{ margin:3px 0; }
+
+    /* ——— TABS ——— */
+    .tab-bar{ display:flex; gap:8px; margin:24px 0; }
+    .tab-bar button{ padding:8px 18px; border:0; border-radius:20px; background:#333; color:#fff;
+                     cursor:pointer; transition:background .2s; }
+    .tab-bar button.active{ background:#00e0ff; color:#000; font-weight:bold; }
+
+    .tab-content{ display:none; }
+    .tab-content.active{ display:block; animation:fade .4s; }
+    @keyframes fade{ from{opacity:0;} to{opacity:1;} }
+
+    /* ——— ACCORDION ——— */
+    .accordion{ margin:12px 0; border-top:1px solid #333; }
+    .accordion input{ display:none; }
+    .accordion label{ display:block; padding:10px 0; cursor:pointer; font-weight:bold; }
+    .accordion div{ max-height:0; overflow:hidden; transition:max-height .3s ease; }
+    .accordion input:checked ~ div{ max-height:400px; }
+
+    /* ——— CAROUSEL ——— */
+    .carousel{ margin-top:12px; }
+    .carousel img{ width:100%; border-radius:8px; }
+    .carousel .thumbs{ display:flex; gap:6px; margin-top:8px; overflow-x:auto; }
+    .carousel .thumbs img{ width:80px; height:50px; object-fit:cover; cursor:pointer;
+                           opacity:.6; border-radius:4px; flex-shrink:0; }
+    .carousel .thumbs img.active{ opacity:1; outline:2px solid #00e0ff; }
+
+    /* ——— BOTONES ——— */
+    .btn{ display:inline-block; margin:18px 8px 0 0; padding:12px 26px; border-radius:40px;
+          background:#00e0ff; color:#000; font-weight:bold; transition:transform .2s; }
+    .btn:hover{ transform:translateY(-3px); }
+    .btn.alt{ background:#ffb400; }
+
+    /* ——— SCROLLBAR ——— */
+    .info::-webkit-scrollbar{ width:8px; }
+    .info::-webkit-scrollbar-thumb{ background:#00e0ff; border-radius:4px; }
+
+    /* ——— MOBILE (≤768 px) ——— */
+    @media (max-width:768px){
+      body{ flex-direction:column; }
+
+      .main-img{ flex:none; height:250px; max-height:none; min-width:100%; }
+      .main-img img{ height:250px; }
+
+      .info{ flex:none; padding:20px 16px; overflow-y:visible; }
+
+      h1{ font-size:2.2rem; }
+      h2{ font-size:1.2rem; margin:20px 0 10px; }
+
+      .tab-bar{ position:sticky; top:0; z-index:5; background:#181818; gap:6px; }
+      .tab-bar button{ font-size:.9rem; padding:8px 12px; }
+
+      .carousel .thumbs img{ width:60px; height:40px; }
+      .btn{ padding:10px 18px; font-size:.9rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <section class="main-img">
+    <img src="Portada.webp" alt="Portada Minecraft">
+  </section>
+
+
+  <section class="info">
+
+    <h1>Minecraft</h1>
+
+    <span class="tag">Sandbox</span>
+    <span class="tag">Supervivencia</span>
+    <span class="tag">Creativo</span>
+
+    <p style="margin:14px 0 6px;">
+      Explora mundos infinitos y construye desde lo más simple hasta lo más grandioso.
+      Juega en modo creativo con recursos ilimitados o sobrevive recolectando materiales
+      y creando herramientas para defenderte de criaturas.
+    </p>
+
+
+    <div class="tab-bar">
+      <button class="active" data-tab="ficha">Ficha</button>
+      <button data-tab="requisitos">Requisitos</button>
+      <button data-tab="galeria">Galería</button>
+      <button data-tab="trailer">Tráiler</button>
+    </div>
+
+    <!-- TAB: FICHA -->
+    <div id="ficha" class="tab-content active">
+      <h2>Datos generales</h2>
+      <ul>
+        <li><strong>Desarrollador:</strong> Mojang Studios</li>
+        <li><strong>Publisher:</strong> Mojang · Xbox Game Studios</li>
+        <li><strong>Motor:</strong> Java Engine / Bedrock Engine</li>
+        <li><strong>Plataformas:</strong> PC, PlayStation, Xbox, Switch, Android, iOS</li>
+        <li><strong>Lanzamiento:</strong> 18 noviembre 2011</li>
+        <li><strong>Modos:</strong> Single‑player · Multiplayer</li>
+        <li><strong>Actualización más reciente:</strong> Tricky Trials (junio 2024)</li>
+      </ul>
+
+      <h2>Ediciones disponibles</h2>
+      <div class="accordion">
+        <input type="checkbox" id="java">
+        <label for="java">🌐 Java Edition</label>
+        <div><p>Compatible con mods. Solo PC. Cross‑play Windows · Mac · Linux.</p></div>
+
+        <input type="checkbox" id="bedrock">
+        <label for="bedrock">📱 Bedrock Edition</label>
+        <div><p>Consolas y móviles. Marketplace y cross‑play multiplataforma.</p></div>
+
+        <input type="checkbox" id="edu">
+        <label for="edu">🎓 Education Edition</label>
+        <div><p>Versión educativa con lecciones de ciencias, arte y más.</p></div>
+      </div>
+
+      <a href="#" class="btn">Jugar ahora</a>
+      <a href="#" class="btn alt">Añadir a Favoritos</a>
+    </div>
+
+    <!-- TAB: REQUISITOS -->
+    <div id="requisitos" class="tab-content">
+      <h2>Requisitos de sistema (PC)</h2>
+
+      <h3 style="margin:8px 0 4px;">Mínimos</h3>
+      <ul>
+        <li>CPU: Intel Core i3 / AMD Ryzen 3</li>
+        <li>GPU: Intel HD 4000 / AMD Radeon R5</li>
+        <li>RAM: 4 GB</li>
+        <li>Almacenamiento: 2 GB</li>
+        <li>SO: Windows 10 · macOS · Linux</li>
+      </ul>
+
+      <h3 style="margin:16px 0 4px;">Recomendados</h3>
+      <ul>
+        <li>CPU: Intel Core i5 / AMD Ryzen 5</li>
+        <li>GPU: NVIDIA GTX 1650 / AMD RX 570</li>
+        <li>RAM: 8 GB</li>
+        <li>Almacenamiento: 4 GB SSD</li>
+        <li>SO: Windows 10 64‑bit</li>
+      </ul>
+    </div>
+
+    <!-- TAB: GALERÍA -->
+    <div id="galeria" class="tab-content">
+      <h2>Capturas de pantalla</h2>
+      <div class="carousel">
+        <img id="bigshot" src="Galeria/imagen1.jpg" alt="Captura de Minecraft">
+        <div class="thumbs">
+          <img class="active" src="Galeria/imagen1.jpg" alt="Mini 1" data-full="Galeria/imagen1.jpg" loading="lazy">
+          <img src="Galeria/imagen2.jpg" alt="Mini 2" data-full="Galeria/imagen2.jpg" loading="lazy">
+          <img src="Galeria/imagen3.jpg" alt="Mini 3" data-full="Galeria/imagen3.jpg" loading="lazy">
+          <img src="Galeria/imagen4.jpg" alt="Mini 4" data-full="Galeria/imagen4.jpg" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: TRÁILER -->
+    <div id="trailer" class="tab-content">
+      <h2>Tráiler oficial</h2>
+      <div style="aspect-ratio:16/9; position:relative; overflow:hidden; border-radius:8px;">
+        <iframe src="https://www.youtube.com/embed/MmB9b5njVbA"
+                style="position:absolute;inset:0;width:100%;height:100%;border:0;"
+                allowfullscreen
+                title="Tráiler de Minecraft"></iframe>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ——— JS ——— -->
+  <script>
+    // PESTAÑAS
+    const tabButtons  = document.querySelectorAll('.tab-bar button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // GALERÍA
+    const bigshot = document.getElementById('bigshot');
+    const thumbs  = document.querySelectorAll('.thumbs img');
+
+    thumbs.forEach(t => {
+      t.addEventListener('click', () => {
+        thumbs.forEach(i => i.classList.remove('active'));
+        t.classList.add('active');
+        bigshot.src = t.dataset.full;
+      });
+    });
+  </script>
+
+</body>
+</html>
